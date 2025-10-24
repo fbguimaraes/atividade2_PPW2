@@ -6,14 +6,16 @@ def lista_posts(request):
 
 
 def post(request, ano, mes, slug):
+
     ano = int(ano)
     mes = int(mes)
 
     if not (2000 <= ano <= 2030):
         return HttpResponse(" Ano inválido! O ano deve estar entre 2000 e 2030.")
 
+  
     if not (1 <= mes <= 12):
         return HttpResponse(" Mês inválido! O mês deve estar entre 01 e 12.")
 
-    # Se tudo estiver ok, exibe o post
+   
     return HttpResponse(f" Exibindo o post '{slug.replace("-", " ").title()}' publicado em {mes:02d}/{ano}.")
